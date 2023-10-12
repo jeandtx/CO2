@@ -10,6 +10,13 @@ def load_clean_data():
     return carbone
 
 
+def load_dataset():
+    import numpy as np
+    import pandas as pd
+    carbone = pd.read_csv('./pages/carbone.csv')
+    return carbone
+
+
 def load_industry():
     import numpy as np
     import pandas as pd
