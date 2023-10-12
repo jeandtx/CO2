@@ -1,3 +1,4 @@
+import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
 import pandas as pd
@@ -16,19 +17,21 @@ This is where things get exciting! We're diving deeper into the realm of data by
 Our main mission here is to analyze and visualize the greenhouse gas emissions (gCO2) of sectors and companies. We'll create insightful plots that showcase the relationships and dynamics between these two crucial factors. 🌍📉
 
 """
-industry = pd.read_csv('/Users/jeandtx/Documents/CODE/M1/DATA VIZ/project 2/pages/industry.csv')
-fig = px.histogram(industry, x='NAF_SECTION', title='Number of companies by industry in this new dataset')
+industry = pd.read_csv('.pages/industry.csv')
+fig = px.histogram(industry, x='NAF_SECTION',
+                   title='Number of companies by industry in this new dataset')
 st.plotly_chart(fig)
-fig = px.histogram(industry, x='NAF_SECTION', title='Tonnes of CO2 produced by industry in the dataset', y='tonnes CO2 scopes 1 & 2', histfunc='sum')
+fig = px.histogram(industry, x='NAF_SECTION', title='Tonnes of CO2 produced by industry in the dataset',
+                   y='tonnes CO2 scopes 1 & 2', histfunc='sum')
 fig.update_layout(yaxis_type="log")
 st.plotly_chart(fig)
 
-import plotly.graph_objects as go
 
 # Create your scatter plot with the trendline
 fig = px.scatter(industry, x='g CO2 / € du secteur', y="g CO2 /  € de l'entreprise", color='Entité',
                  title='Tonnes of CO2 produced by industry in the dataset')
-diagonal = go.Scatter(x=list(range(len(industry))), y=list(range(len(industry))), mode='lines', name='x = y')
+diagonal = go.Scatter(x=list(range(len(industry))), y=list(
+    range(len(industry))), mode='lines', name='x = y')
 fig.add_trace(diagonal)
 # Update the y-axis to use a logarithmic scale
 fig.update_traces(showlegend=False)

@@ -39,7 +39,7 @@ Then, we need to load our datasets. We'll be using the following datasets for ou
 The [La Base Carbone](https://www.data.gouv.fr/fr/datasets/base-carbone-complete-de-lademe-en-francais-v17-0/) is a public database managed by ADEME (French Agency for Ecological Transition) containing emission factors essential for conducting carbon accounting exercises. (An emission factor is a ratio used to determine greenhouse gas emissions associated with an object, material, or service.)
 """
 with st.echo(code_location='below'):
-    carbone = pd.read_csv('/Users/jeandtx/Documents/CODE/M1/DATA VIZ/project 2/pages/carbone.csv')
+    carbone = pd.read_csv('./pages/carbone.csv')
 
 """
 ```
@@ -68,10 +68,10 @@ After this, a simple scatter plot help us to visualize all the numeric features 
 """
 with st.echo(code_location='top'):
     carbone.drop([
-       "Statut de l'élément", 'Code gaz supplémentaire 2', 'Valeur gaz supplémentaire 2',
-       'Code gaz supplémentaire 3', 'Valeur gaz supplémentaire 3',
-       'Code gaz supplémentaire 4', 'Valeur gaz supplémentaire 4',
-       'Code gaz supplémentaire 5', 'Valeur gaz supplémentaire 5'], axis=1, inplace=True)
+        "Statut de l'élément", 'Code gaz supplémentaire 2', 'Valeur gaz supplémentaire 2',
+        'Code gaz supplémentaire 3', 'Valeur gaz supplémentaire 3',
+        'Code gaz supplémentaire 4', 'Valeur gaz supplémentaire 4',
+        'Code gaz supplémentaire 5', 'Valeur gaz supplémentaire 5'], axis=1, inplace=True)
     fig = px.scatter(carbone.select_dtypes([np.number]))
     st.plotly_chart(fig)
 
