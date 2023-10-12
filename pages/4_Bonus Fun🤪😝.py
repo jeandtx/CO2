@@ -2,6 +2,7 @@ import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
 import pandas as pd
+from utils import load_industry
 
 """
 # Bonus Fun Page: Exploring New Frontiers 🚀📊
@@ -17,7 +18,7 @@ This is where things get exciting! We're diving deeper into the realm of data by
 Our main mission here is to analyze and visualize the greenhouse gas emissions (gCO2) of sectors and companies. We'll create insightful plots that showcase the relationships and dynamics between these two crucial factors. 🌍📉
 
 """
-industry = pd.read_csv('industry.csv')
+industry = load_industry()
 fig = px.histogram(industry, x='NAF_SECTION',
                    title='Number of companies by industry in this new dataset')
 st.plotly_chart(fig)

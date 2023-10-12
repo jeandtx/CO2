@@ -8,3 +8,10 @@ def load_clean_data():
         'Code gaz supplémentaire 4', 'Valeur gaz supplémentaire 4',
         'Code gaz supplémentaire 5', 'Valeur gaz supplémentaire 5'], axis=1, inplace=True)
     return carbone
+
+
+def load_industry():
+    import numpy as np
+    import pandas as pd
+    industry = pd.read_csv('./pages/industry.csv')
+    return industry
