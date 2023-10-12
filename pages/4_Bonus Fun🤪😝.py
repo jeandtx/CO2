@@ -17,7 +17,7 @@ This is where things get exciting! We're diving deeper into the realm of data by
 Our main mission here is to analyze and visualize the greenhouse gas emissions (gCO2) of sectors and companies. We'll create insightful plots that showcase the relationships and dynamics between these two crucial factors. 🌍📉
 
 """
-industry = pd.read_csv('.pages/industry.csv')
+industry = pd.read_csv('./industry.csv')
 fig = px.histogram(industry, x='NAF_SECTION',
                    title='Number of companies by industry in this new dataset')
 st.plotly_chart(fig)
