@@ -1,7 +1,7 @@
 def load_clean_data():
     import numpy as np
     import pandas as pd
-    carbone = pd.read_csv('/pages/carbone.csv')
+    carbone = pd.read_csv('./pages/carbone.csv')
     carbone.drop([
         "Statut de l'élément", 'Code gaz supplémentaire 2', 'Valeur gaz supplémentaire 2',
         'Code gaz supplémentaire 3', 'Valeur gaz supplémentaire 3',

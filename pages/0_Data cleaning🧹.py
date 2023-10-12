@@ -39,7 +39,7 @@ Then, we need to load our datasets. We'll be using the following datasets for ou
 The [La Base Carbone](https://www.data.gouv.fr/fr/datasets/base-carbone-complete-de-lademe-en-francais-v17-0/) is a public database managed by ADEME (French Agency for Ecological Transition) containing emission factors essential for conducting carbon accounting exercises. (An emission factor is a ratio used to determine greenhouse gas emissions associated with an object, material, or service.)
 """
 with st.echo(code_location='below'):
-    carbone = pd.read_csv('./carbone.csv')
+    carbone = pd.read_csv('carbone.csv')
 
 """
 ```
