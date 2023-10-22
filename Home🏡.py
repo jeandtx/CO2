@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.set_page_config(layout="centered", page_title="CO2 Emission Visualization App")
+st.set_page_config(layout="centered",
+                   page_title="CO2 Emission Visualization App")
 
 """
 # Welcome to our CO2 Emission Visualization App! 🌍📊
@@ -33,3 +34,10 @@ Our journey begins here, with you. Together, we'll shine a light on the shadows 
 
 ![Magnifying Glass](https://picsum.photos/seed/1697101143062/700/300)
 """
+st.sidebar.title("About Me")
+st.sidebar.markdown(
+    "Hi! I'm **Jean Doutriaux** and I'm a **Data Science** student at **Efrei Paris**. I'm passionate about **Data Visualization** and **Machine Learning**.🤓")
+st.sidebar.markdown("You can find me on:")
+st.sidebar.markdown(
+    "[LinkedIn](https://www.linkedin.com/in/jean-doutriaux-8a7781128)")
+st.sidebar.markdown("[GitHub](https://github.com/jeandtx)")

@@ -40,7 +40,8 @@ else:
 
 # Generate the histogram plot
 with st.echo(code_location='top'):
-    fig = px.histogram(carbone, x='Localisation géographique', y='Total poste non décomposé', histfunc=histfunc, title=title)
+    fig = px.histogram(carbone, x='Localisation géographique',
+                       y='Total poste non décomposé', histfunc=histfunc, title=title)
     st.plotly_chart(fig)
 
 """
@@ -57,12 +58,13 @@ log_scale = st.checkbox("Log Scale")
 
 # Generate the histogram plot
 with st.echo(code_location='top'):
-    fig = px.histogram(carbone, x='Sous-localisation géographique français', y='Total poste non décomposé', histfunc='avg', title='Sum CO2 emitting by country')
-    
+    fig = px.histogram(carbone, x='Sous-localisation géographique français',
+                       y='Total poste non décomposé', histfunc='avg', title='Sum CO2 emitting by country')
+
     # Set the y-axis scale based on the user's selection
     if log_scale:
         fig.update_layout(yaxis_type="log")
-    
+
     st.plotly_chart(fig)
 
 """
@@ -71,8 +73,10 @@ The aftermath is this plot with a lot of blanks. We can't really do anything abo
 """
 
 with st.echo(code_location='bottom'):
-    carbone.drop(carbone[carbone['Total poste non décomposé'] < 10].index, inplace=True)
-    fig = px.histogram(carbone, x='Sous-localisation géographique français', y='Total poste non décomposé', histfunc='avg', title='Avg CO2 emitting by departement')
+    carbone.drop(
+        carbone[carbone['Total poste non décomposé'] < 10].index, inplace=True)
+    fig = px.histogram(carbone, x='Sous-localisation géographique français',
+                       y='Total poste non décomposé', histfunc='avg', title='Avg CO2 emitting by departement')
     if log_scale:
         fig.update_layout(yaxis_type="log")
     st.plotly_chart(fig)
@@ -102,9 +106,11 @@ else:
 # Generate the histogram plot
 with st.echo(code_location='top'):
     if color:
-        fig = px.histogram(carbone, x='Date de modification', y='Total poste non décomposé', histfunc=histfunc2, title=title, color='Incertitude')
+        fig = px.histogram(carbone, x='Date de modification', y='Total poste non décomposé',
+                           histfunc=histfunc2, title=title, color='Incertitude')
     else:
-        fig = px.histogram(carbone, x='Date de modification', y='Total poste non décomposé', histfunc=histfunc2, title=title)
+        fig = px.histogram(carbone, x='Date de modification',
+                           y='Total poste non décomposé', histfunc=histfunc2, title=title)
     if log_scale2:
         fig.update_layout(yaxis_type="log")
 
@@ -115,7 +121,8 @@ We can see a huge spike in November 2014. We'll see what happened in this period
 ### CO2 Emissions by Sources:
 """
 with st.echo(code_location='top'):
-    fig = px.histogram(carbone, x='Contributeur', y='Total poste non décomposé', histfunc='sum', title='`Sum CO2 emitted by sources', color='Incertitude')
+    fig = px.histogram(carbone, x='Contributeur', y='Total poste non décomposé',
+                       histfunc='sum', title='`Sum CO2 emitted by sources', color='Incertitude')
     st.plotly_chart(fig)
 
 """
@@ -134,5 +141,5 @@ And this new way of visualizing needs new datasets that are build today for tomo
 This is the responsability of us, future engineers or entrepreneurs to build the datasets of tomorrow.
 
 
-![photo](/Users/jeandtx/Documents/CODE/M1/DATA VIZ/project 2/pages/asset.png)
+![photo](asset.png)
 """
